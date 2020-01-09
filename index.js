@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const quotes = require('random-movie-quote')
+const quotes = require('random-movie-quotes')
 
 
 app.use(express.static('public'));
@@ -11,6 +11,10 @@ app.get('/quote', (req, res) => {
     quote: quotes.getQuote()
   });
 });
+
+// app.get('', (req, res) => {
+//   res.send("Hello World")
+// })
 
 
 app.listen(port, () => console.log(`Awesome app listening on port ${port}!`));
